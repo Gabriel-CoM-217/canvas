@@ -1,6 +1,6 @@
 const url = "https://api.mesitt.com/v3/images/deceased";
 const url2 = "https://api.mesitt.com/v3/deceased";
-const url3 = "http://www.video.mesitt.com/api/datos";
+const url3 = "http://www.video.mesitt.com/api/datosd";
 const tempid = window.location.pathname;
 const id = tempid.substring(1);
 let foto = new Image();
