@@ -44,6 +44,17 @@ const mensaje1_1 = 'Si damos la vida a sus recuerdos,';
 const mensaje1_2 = 'nunca olvidaremos a nuestro ser querido';
 const mensaje1_3 = 'En memoria de';
 const mensaje1_4 = 'Condolencias ofresidas por:';
+const mensaje1_5 = 'Velas ofresidas por:';
+const mensaje1_6 = 'Abrazos ofresidas por:';
+const mensaje1_7 = 'Flores enviadas por:';
+const mensaje1_8 = 'Fotografias enviadas por:';
+const mensaje1_9 = 'Servicios presentados por:';
+/////////////////////////////////////////////////////
+const mensaje1_10 = 'Todo el personal de este tanatorio';
+const mensaje1_11 = 'queremos agredecerles la confianza';
+const mensaje1_12 = 'depositada en nuetros servicios,';
+const mensaje1_13 = 'acompañandoles en estos momentos';
+const mensaje1_14 = 'tan dolorosos.';
 let difunto_datos = null; 
 
 const main = () =>{
@@ -55,7 +66,7 @@ const main = () =>{
   });
   drawText();
   canvasT.toBlob(function (blob) {
-    document.getElementById("myImg2").src = URL.createObjectURL(blob);
+    document.createElement("tex1").src = URL.createObjectURL(blob);
     fMen1[0].src = URL.createObjectURL(blob);
   });
   drawTextCoMen();
@@ -141,7 +152,7 @@ const updateCanvas = () => {
       //console.log(estadoVideo);
       //mediaRecorder.stop();
       estadoVideo = estadoVideo + 1;
-      if (estadoVideo == 9) {
+      if (estadoVideo == 3) {
         mediaRecorder.stop();
         return;
       }
@@ -439,7 +450,7 @@ const drawTextCoMen = () => {
   ctx3.textAlign = "center";
   ctx3.fillText(mensaje1_4,canvasT.width/2,canvasT.height/2); 
   canvasT.toBlob(function (blob) {
-    document.getElementById("myImg2").src = URL.createObjectURL(blob);
+    document.createElement("tex2").src = URL.createObjectURL(blob);
     fMen1[2].src = URL.createObjectURL(blob);
   });
 }
@@ -451,9 +462,11 @@ const getInfo = () => {
   .then(response => {
     difunto_datos = response.data[0];
     drawTextDifunto();
-  canvasT.toBlob(function (blob) {
-    document.getElementById("myImg2").src = URL.createObjectURL(blob);
+    canvasT.toBlob(function (blob) {
+    document.createElement("text3").src = URL.createObjectURL(blob);
     fMen1[1].src = URL.createObjectURL(blob);
+    document.getElementById("nombreD").innerHTML = difunto_datos.nombre;   
+    document.getElementById("apellidoD").innerHTML = difunto_datos.apellidos;  
   });   
  })
   .catch(error => console.error(error));
